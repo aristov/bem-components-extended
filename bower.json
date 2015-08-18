@@ -1,0 +1,16 @@
+{
+  "name": "bem-components-extended",
+  "version": "0.0.0",
+  "description": "Set of useful extensions for bem-components library",
+  "ignore": [
+    ".enb/tmp",
+    "node_modules",
+    "libs"
+  ],
+  "dependencies": {
+    "bem-components": "2.3.0"
+  },
+  "devDependencies": {
+    "bem-pr": "~0.10.0"
+  }
+}

@@ -1,0 +1,11 @@
+.*.swp
+
+.project
+.settings/
+.idea/
+
+.enb/tmp
+node_modules
+libs
+
+/*.specs

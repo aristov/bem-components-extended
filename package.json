@@ -1,0 +1,21 @@
+{
+  "author": "Vyacheslav Aristov <einstain@yandex-team.ru>",
+  "name": "bem-components-extended",
+  "version": "0.0.0",
+  "description": "Set of useful extensions for bem-components library",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aristov/bem-components-extended.git"
+  },
+  "keywords": [
+    "bem"
+  ],
+  "engines": {
+    "node": ">=0.10"
+  },
+  "devDependencies": {
+    "enb": "^0.17.1",
+    "enb-bem-specs": "^0.6.0",
+    "enb-magic-factory": "^0.4.4"
+  }
+}
