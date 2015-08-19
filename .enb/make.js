@@ -1,3 +1,6 @@
+var fs = require('fs'),
+    path = require('path');
+
 module.exports = function (config) {
     config.includeConfig('enb-bem-specs');
 
@@ -32,7 +35,7 @@ module.exports = function (config) {
         techSuffixes : 'tests'
     });
 
-    config.node('desktop.tests/button/simple', function(nodeConfig) {
+    config.nodes(['desktop.tests/*/*'], function(nodeConfig) {
         nodeConfig.addTechs([
             [ require('enb-bem-techs/techs/levels'), { levels : getLevels() } ],
             require('enb-bem-techs/techs/bemjson-to-bemdecl'),
@@ -53,16 +56,24 @@ module.exports = function (config) {
         nodeConfig.addTargets(['?.html', '_?.css', '_?.js']);
 
         function getLevels() {
-            return [
-                { path : 'libs/bem-core/common.blocks', check : false },
-                { path : 'libs/bem-core/desktop.blocks', check : false },
-                { path : 'libs/bem-components/common.blocks', check : false },
-                { path : 'libs/bem-components/common.blocks', check : false },
-                { path : 'libs/bem-components/design/common.blocks', check : false },
-                { path : 'libs/bem-components/design/desktop.blocks', check : false },
-                { path : 'blocks', check : true },
-                { path : 'desktop.tests/button/simple/blocks', check : true }
-            ].map(function(l) { return config.resolvePath(l); });
+            var nodeDir = nodeConfig.getNodePath(),
+                sublevelDir = path.join(nodeDir, 'blocks'),
+                levels = [
+                    { path : 'libs/bem-core/common.blocks', check : false },
+                    { path : 'libs/bem-core/desktop.blocks', check : false },
+                    { path : 'libs/bem-components/common.blocks', check : false },
+                    { path : 'libs/bem-components/common.blocks', check : false },
+                    { path : 'libs/bem-components/design/common.blocks', check : false },
+                    { path : 'libs/bem-components/design/desktop.blocks', check : false },
+                    { path : 'blocks', check : true }/*,
+                    { path : 'desktop.tests/button/simple/blocks', check : true }*/
+                ];
+
+            if(fs.existsSync(sublevelDir)) {
+                levels.push(sublevelDir);
+            }
+
+            return levels.map(function(l) { return config.resolvePath(l); });
         }
     });
 };
