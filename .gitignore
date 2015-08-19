@@ -4,8 +4,10 @@
 .settings/
 .idea/
 
+tmp
 .enb/tmp
 node_modules
 libs
 
 /*.specs
+/*.tests

@@ -1,11 +1,11 @@
 module.exports = function (config) {
     config.includeConfig('enb-bem-specs');
 
-    var examples = config
+    var specs = config
             .module('enb-bem-specs')
             .createConfigurator('specs');
 
-    examples.configure({
+    specs.configure({
         destPath : 'desktop.specs',
         levels : ['blocks'],
         sourceLevels : [
@@ -18,5 +18,51 @@ module.exports = function (config) {
         ],
         jsSuffixes : ['js', 'vanilla.js'],
         depsTech : 'deps'
+    });
+
+    config.includeConfig('enb-bem-examples');
+
+    var tests = config
+            .module('enb-bem-examples')
+            .createConfigurator('tests');
+
+    tests.configure({
+        destPath : 'desktop.tests',
+        levels : ['blocks'],
+        techSuffixes : 'tests'
+    });
+
+    config.node('desktop.tests/button/simple', function(nodeConfig) {
+        nodeConfig.addTechs([
+            [ require('enb-bem-techs/techs/levels'), { levels : getLevels() } ],
+            require('enb-bem-techs/techs/bemjson-to-bemdecl'),
+            require('enb-bem-techs/techs/deps'),
+            require('enb-bem-techs/techs/files'),
+
+            [ require('enb-bemxjst/techs/bemhtml'), { devMode : true } ],
+            require('enb-bemxjst/techs/html-from-bemjson'),
+
+            [ require('enb-stylus/techs/css-stylus'), { target : '?.pre.css' } ],
+            [ require('enb-autoprefixer/techs/css-autoprefixer'), { sourceTarget : '?.pre.css', destTarget : '?.css' } ],
+            [ require('enb-borschik/techs/borschik'), { sourceTarget : '?.css', destTarget : '_?.css', minify : false } ],
+
+            [ require('enb/techs/js'), { sourceSuffixes : ['vanilla.js', 'js'], target : '?.pre.js' } ],
+            [ require('enb-modules/techs/prepend-modules'), { source : '?.pre.js', target : '?.js' } ],
+            [ require('enb-borschik/techs/borschik'), { sourceTarget : '?.js', destTarget : '_?.js', minify : false } ]
+        ]);
+        nodeConfig.addTargets(['?.html', '_?.css', '_?.js']);
+
+        function getLevels() {
+            return [
+                { path : 'libs/bem-core/common.blocks', check : false },
+                { path : 'libs/bem-core/desktop.blocks', check : false },
+                { path : 'libs/bem-components/common.blocks', check : false },
+                { path : 'libs/bem-components/common.blocks', check : false },
+                { path : 'libs/bem-components/design/common.blocks', check : false },
+                { path : 'libs/bem-components/design/desktop.blocks', check : false },
+                { path : 'blocks', check : true },
+                { path : 'desktop.tests/button/simple/blocks', check : true }
+            ].map(function(l) { return config.resolvePath(l); });
+        }
     });
 };
