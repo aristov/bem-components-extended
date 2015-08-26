@@ -19,7 +19,7 @@ module.exports = function (config) {
             { path : 'libs/bem-pr/spec.blocks', check : false },
             'blocks'
         ],
-        jsSuffixes : ['js', 'vanilla.js'],
+        jsSuffixes : ['vanilla.js', 'js'],
         depsTech : 'deps'
     });
 
@@ -65,8 +65,7 @@ module.exports = function (config) {
                     { path : 'libs/bem-components/common.blocks', check : false },
                     { path : 'libs/bem-components/design/common.blocks', check : false },
                     { path : 'libs/bem-components/design/desktop.blocks', check : false },
-                    { path : 'blocks', check : true }/*,
-                    { path : 'desktop.tests/button/simple/blocks', check : true }*/
+                    { path : 'blocks', check : true }
                 ];
 
             if(fs.existsSync(sublevelDir)) {

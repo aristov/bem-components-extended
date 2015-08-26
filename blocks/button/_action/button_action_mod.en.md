@@ -1,10 +1,12 @@
-#### button_action_mod
+### button_action_mod
 
-##### Parent blocks's modifier switch (`action` modifier with `mod` value)
+Parent blocks's modifier switch (`action` modifier with `mod` value)
 
 Use case: `BEMJSON`.
 
 Use the `action` modifier with the `mod` value to create a button that switches the parent block's modifier on click. Specify parent target, modifier name and value via `js` params field.
+
+#### Example
 
 Button inside popup closes it on click:
 

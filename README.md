@@ -9,7 +9,7 @@ A set of strange, but useful features on top of the [BEM Components Library](htt
 
 All features are implemented at the `blocks` level.
 
-Library supports the same [browsers](https://github.com/bem/bem-components#supported-browsers), and uses the same [technologies](https://github.com/bem/bem-components#techs) and [tools](https://github.com/bem/bem-components#tools), along with bem-components.
+Library supports the same [browsers](https://github.com/bem/bem-components#supported-browsers) and uses the same [technologies](https://github.com/bem/bem-components#techs) and [tools](https://github.com/bem/bem-components#tools), along with bem-components.
 
 ### Features
 
