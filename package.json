@@ -1,7 +1,7 @@
 {
   "author": "Vyacheslav Aristov <einstain@yandex-team.ru>",
   "name": "bem-components-extended",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Set of useful extensions for bem-components library",
   "repository": {
     "type": "git",
