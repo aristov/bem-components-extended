@@ -1,7 +1,7 @@
 BEM Components Extended
 =======================
 
-[![devDependency Status](https://img.shields.io/david/dev/aristov/bem-components-extended.svg?style=flat)](https://david-dm.org/aristov/bem-components-extended#info=devDependencies)
+[![devDependency Status](https://img.shields.io/david/dev/bem-incubator/bem-components-extended.svg?style=flat)](https://david-dm.org/bem-incubator/bem-components-extended#info=devDependencies)
 
 ### What is this?
 
@@ -21,7 +21,7 @@ Library supports the same [browsers](https://github.com/bem/bem-components#suppo
 
 Get sources:
 
-`git clone git://github.com/aristov/bem-components-extended.git`
+`git clone git://github.com/bem-incubator/bem-components-extended.git`
 
 `cd bem-components-extended`
 

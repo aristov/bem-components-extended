@@ -5,7 +5,7 @@
   "description": "Set of useful extensions for bem-components library",
   "repository": {
     "type": "git",
-    "url": "git://github.com/aristov/bem-components-extended.git"
+    "url": "git://github.com/bem-incubator/bem-components-extended.git"
   },
   "keywords": [
     "bem"
