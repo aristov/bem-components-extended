@@ -1,7 +1,7 @@
 modules.define(
     'spec',
-    ['button', 'i-bem__dom', 'jquery', 'BEMHTML'],
-    function(provide, Button, BEMDOM, $, BEMHTML) {
+    ['button', 'i-bem__dom', 'i-bem__internal', 'jquery', 'BEMHTML'],
+    function(provide, Button, BEMDOM, INTERNAL, $, BEMHTML) {
 
 describe('button_action_mod', function() {
     it('should switch mod of target block on click', function() {
@@ -20,7 +20,7 @@ describe('button_action_mod', function() {
             })).appendTo('body')),
             button = container.find('.button');
 
-        container.hasClass('container_foo').should.be.false;
+        container.hasClass(INTERNAL.buildClass('container', 'foo', true)).should.be.false;
         button.trigger('pointerpress').trigger('pointerrelease');
         container.bem('container').hasMod('foo').should.be.true;
 
