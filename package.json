@@ -14,7 +14,6 @@
     "node": ">=0.10"
   },
   "devDependencies": {
-    "autoprefixer-core": "^5.1.11",
     "borschik": "^1.4.1",
     "enb": "^0.17.1",
     "enb-autoprefixer": "^0.3.0",
