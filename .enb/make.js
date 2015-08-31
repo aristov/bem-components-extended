@@ -43,15 +43,14 @@ module.exports = function (config) {
             require('enb-bem-techs/techs/files'),
 
             [ require('enb-bemxjst/techs/bemhtml'), { devMode : true } ],
-            require('enb-bemxjst/techs/html-from-bemjson'),
+            require('enb-bemxjst/techs/bemjson-to-html'),
 
-            [ require('enb-stylus/techs/css-stylus'), { target : '?.pre.css' } ],
-            [ require('enb-autoprefixer/techs/css-autoprefixer'), { sourceTarget : '?.pre.css', destTarget : '?.css' } ],
-            [ require('enb-borschik/techs/borschik'), { sourceTarget : '?.css', destTarget : '_?.css', minify : false } ],
+            [ require('enb-stylus/techs/stylus'), { target : '?.css', autoprefixer : true } ],
+            [ require('enb-borschik/techs/borschik'), { source : '?.css', target : '_?.css', minify : false } ],
 
             [ require('enb/techs/js'), { sourceSuffixes : ['vanilla.js', 'js'], target : '?.pre.js' } ],
             [ require('enb-modules/techs/prepend-modules'), { source : '?.pre.js', target : '?.js' } ],
-            [ require('enb-borschik/techs/borschik'), { sourceTarget : '?.js', destTarget : '_?.js', minify : false } ]
+            [ require('enb-borschik/techs/borschik'), { source : '?.js', target : '_?.js', minify : false } ]
         ]);
         nodeConfig.addTargets(['?.html', '_?.css', '_?.js']);
 
