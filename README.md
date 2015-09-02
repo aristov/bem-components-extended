@@ -42,6 +42,7 @@ Start the development server:
 #### How to contribute
 
 Feel free to create pull requests and issues with your proposals.
+Follow the [principles of BEM library development](https://github.com/bem/bem-method/blob/bem-info-data/guides/libs-dev-principles/libs-dev-principles.en.md).
 Don't forget to provide autotests (for bug fixes and new features), examples and docs (for new features).
 
 #### JavaScript unit tests
