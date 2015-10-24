@@ -48,7 +48,7 @@ module.exports = function (config) {
             [ require('enb-stylus/techs/stylus'), { target : '?.css', autoprefixer : true } ],
             [ require('enb-borschik/techs/borschik'), { source : '?.css', target : '_?.css', minify : false } ],
 
-            [ require('enb/techs/js'), { sourceSuffixes : ['vanilla.js', 'js'], target : '?.pre.js' } ],
+            [ require('enb-js/techs/browser-js'), { sourceSuffixes : ['vanilla.js', 'js'], target : '?.pre.js' } ],
             [ require('enb-modules/techs/prepend-modules'), { source : '?.pre.js', target : '?.js' } ],
             [ require('enb-borschik/techs/borschik'), { source : '?.js', target : '_?.js', minify : false } ]
         ]);

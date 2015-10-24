@@ -14,6 +14,7 @@ Library supports the same [browsers](https://github.com/bem/bem-components#suppo
 ### Features
 
 - [button_action_mod](blocks/button/_action/button_action_mod.en.md) &mdash; a button, that switches a container's mod on click
+- [modal_has-close](blocks/modal/_has-close/modal_has-close.en.md) &mdash; a modal with a close button
 
 ### Development
 

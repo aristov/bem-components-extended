@@ -1,8 +1,9 @@
 {
   "author": "Vyacheslav Aristov <einstain@yandex-team.ru>",
   "name": "bem-components-extended",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Set of useful extensions for bem-components library",
+  "license" : "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/bem-incubator/bem-components-extended.git"
@@ -14,18 +15,18 @@
     "node": ">=0.10"
   },
   "devDependencies": {
-    "enb": "^0.17.2",
-    "enb-autoprefixer": "^0.3.0",
-    "enb-bem-examples": "^0.5.10",
-    "enb-bem-specs": "^0.6.0",
-    "enb-bem-techs": "^2.0.0",
-    "enb-bembundle": "^1.2.1",
-    "enb-bemxjst": "^2.0.1",
-    "enb-borschik": "^2.0.0",
-    "enb-magic-factory": "^0.4.4",
-    "enb-magic-platform": "^0.5.0",
+    "enb": "^1.0.1",
+    "enb-js": "^1.1.0",
+    "enb-bem-examples": "^0.6.0",
+    "enb-bem-specs": "^0.8.0",
+    "enb-bem-techs": "^2.1.0",
+    "enb-bembundle": "^1.2.2",
+    "enb-bemxjst": "^2.1.0",
+    "enb-borschik": "^2.1.0",
+    "enb-magic-factory": "^0.5.0",
+    "enb-magic-platform": "^0.6.0",
     "enb-modules": "^0.2.0",
-    "enb-stylus": "^2.0.0",
+    "enb-stylus": "^2.1.0",
     "ym": "^0.1.2"
   }
 }
