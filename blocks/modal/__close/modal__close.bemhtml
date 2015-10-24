@@ -1,0 +1,26 @@
+block('modal').elem('close')(
+    def()(function() {
+        return applyCtx({
+            block : 'button',
+            mods : apply('mods'),
+            js : {
+                target : 'modal',
+                modName : 'visible',
+                modVal : false
+            },
+            mix : this.ctx,
+            title : apply('title'),
+            text : apply('content')
+        });
+    }),
+    mode('mods')({ action : 'mod' }),
+    mode('title')(
+        'Close dialog',
+        match(function() {
+            return typeof this.ctx.title !== 'undefined';
+        })(function() {
+            return this.ctx.title;
+        })
+    ),
+    content()('×')
+);

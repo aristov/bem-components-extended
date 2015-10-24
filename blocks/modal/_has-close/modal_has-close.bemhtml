@@ -1,0 +1,19 @@
+block('modal').mod('has-close', true)(
+    def().match(function() {
+        return !!this.ctx.close;
+    })(function() {
+        return applyNext({
+            _close : this.ctx.close
+        });
+    }),
+    elem('content').content()(function() {
+        return [
+            this.extend({
+                block : 'modal',
+                elem : 'close',
+                elemMods : { theme : this.mods.theme }
+            }, this._close),
+            applyNext()
+        ];
+    })
+);
